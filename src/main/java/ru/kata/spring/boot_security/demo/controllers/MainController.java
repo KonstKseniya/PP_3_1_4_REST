@@ -36,7 +36,7 @@ public class MainController {
     }
 
     @GetMapping("/user")
-    public String userPage(Model model, Principal principal) {
+    public String showUserPage(Model model, Principal principal) {
         User user = userService.findUserByUsername(principal.getName());
         model.addAttribute("user", user);
         return "user";
